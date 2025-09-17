@@ -64,10 +64,12 @@ jobs:
 
       # Empacota a aplicação em um JAR executável
       - name: Empacotar aplicação
+        if: matrix.java-version == '17'
         run: mvn -B package -DskipTests
 
       # Salva o JAR como artefato para jobs futuros
       - name: Upload do Artefato JAR
+        if: matrix.java-version == '17'
         uses: actions/upload-artifact@v4
         with:
           name: java-app-jar
