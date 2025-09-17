@@ -1,6 +1,6 @@
 # --- Estágio 1: Build ---
 # Usa uma imagem com JDK e Maven para compilar o projeto
-FROM eclipse-temurin:17-jdk-jammy as builder
+FROM maven:3.9.5-eclipse-temurin-17 as builder
 WORKDIR /app
 COPY . .
 # Gera o JAR, pulando os testes que rodarão na CI
